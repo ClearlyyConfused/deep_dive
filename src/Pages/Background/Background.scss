@@ -2,12 +2,12 @@
 	position: absolute;
 	width: 100%;
 	z-index: -1;
+	height: 10000px; // determines overall height
 
 	.title-container {
 		position: absolute;
-		height: 700px; // how far title will stick
+		height: 700px; // how far down title will stick
 		width: 100%;
-		z-index: -2;
 		.title {
 			top: 10px;
 			position: sticky;
@@ -18,29 +18,29 @@
 			text-align: center;
 
 			@media (max-width: 550px) {
-				font-size: 35vw;
+				font-size: 35vw; // have title shrink at small viewports
 			}
 		}
 		@media (max-width: 550px) {
-			height: 690px;
+			height: 690px; // have title not stick down as much at small viewports
 		}
 	}
 
 	.waves {
 		padding-top: 300px; // distance from top
-		margin-bottom: -15px;
+		margin-bottom: -15px; // to overlap with .water
 		overflow: hidden;
 		display: flex;
 		justify-content: center;
 		img {
-			min-width: 1500px;
-			animation: swinging 3.5s ease-in-out forwards infinite;
+			min-width: 1600px;
+			animation: waves 3.5s ease-in-out forwards infinite;
 		}
 	}
 
 	.water {
 		padding-top: 300px; // distance from top
-		height: 2000vh; // determines overall height of website
+		height: 9200px;
 		background: rgb(0, 153, 255);
 		background: linear-gradient(
 			180deg,
@@ -51,7 +51,7 @@
 		);
 	}
 
-	@keyframes swinging {
+	@keyframes waves {
 		0% {
 			min-width: 1500px;
 			transform: rotate(1deg);

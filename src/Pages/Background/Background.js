@@ -7,7 +7,7 @@ function Background() {
 			<div className="title-container">
 				<div className="title">
 					<h1>DEEP</h1>
-					<h1> DIVE</h1>
+					<h1>DIVE</h1>
 				</div>
 			</div>
 			<div className="waves">

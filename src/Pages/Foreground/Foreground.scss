@@ -1,2 +1,36 @@
 .foreground {
+	height: 10000px;
+	overflow-x: clip;
+
+	.submarine-container {
+		display: flex;
+		justify-content: center;
+		height: 100%;
+
+		.submarine {
+			margin-top: 800px;
+			height: 200px;
+			width: auto;
+			top: 0px;
+			position: sticky;
+			opacity: 0.5; // 0.5 to 0.1 at lower depths
+			animation: sway 3.5s ease-in-out forwards infinite;
+			background-color: none; // none to white at lower depths
+			padding: 10px;
+			border-radius: 100px;
+			box-shadow: 0px 0px 0px 0px white; // 0px to 0px 0px 50px 60px at lower depths
+		}
+	}
+
+	@keyframes sway {
+		0% {
+			transform: rotate(2deg);
+		}
+		50% {
+			transform: rotate(-2deg);
+		}
+		100% {
+			transform: rotate(2deg);
+		}
+	}
 }
