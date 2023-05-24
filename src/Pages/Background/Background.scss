@@ -1,0 +1,68 @@
+.background {
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+
+	.title-container {
+		position: absolute;
+		height: 700px; // how far title will stick
+		width: 100%;
+		z-index: -2;
+		.title {
+			top: 10px;
+			position: sticky;
+		}
+		h1 {
+			margin: 0;
+			font-size: 200px;
+			text-align: center;
+
+			@media (max-width: 550px) {
+				font-size: 35vw;
+			}
+		}
+		@media (max-width: 550px) {
+			height: 690px;
+		}
+	}
+
+	.waves {
+		padding-top: 300px; // distance from top
+		margin-bottom: -15px;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		img {
+			min-width: 1500px;
+			animation: swinging 3.5s ease-in-out forwards infinite;
+		}
+	}
+
+	.water {
+		padding-top: 300px; // distance from top
+		height: 2000vh; // determines overall height of website
+		background: rgb(0, 153, 255);
+		background: linear-gradient(
+			180deg,
+			rgb(0, 153, 255) 0%,
+			rgba(9, 9, 121, 1) 30%,
+			rgba(2, 0, 36, 1) 90%,
+			rgba(0, 0, 0, 1) 100%
+		);
+	}
+
+	@keyframes swinging {
+		0% {
+			min-width: 1500px;
+			transform: rotate(1deg);
+		}
+		50% {
+			transform: rotate(-1deg);
+			min-width: 1550px;
+		}
+		100% {
+			transform: rotate(1deg);
+			min-width: 1500px;
+		}
+	}
+}
