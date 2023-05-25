@@ -26,12 +26,24 @@
 			position: sticky;
 			top: 280px;
 			margin-top: -60px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 
 			h2 {
+				margin: 0;
 				color: white;
 				opacity: 0.5;
 				font-size: 50px;
 				animation: sway 3.5s ease-in-out forwards infinite;
+				text-align: center;
+			}
+			p {
+				margin: 0;
+				color: white;
+				opacity: 0.5;
+				max-width: 200px;
 				text-align: center;
 			}
 		}

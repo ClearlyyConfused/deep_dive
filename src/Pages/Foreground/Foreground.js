@@ -1,36 +1,15 @@
 import submarine from './images/submarine-svgrepo-com.svg';
 import './Foreground.css';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import SubMoveLogic from './SubMoveLogic';
 
 function Foreground() {
-	const [xCord, setXCord] = useState(0); // for horizontal submarine movement
-	const [deg, setDeg] = useState(0); // for rotation when submarine turns
-	const [depth, setDepth] = useState(0);
+	const { subMovement, xCord, deg, depth } = SubMoveLogic();
 
 	useEffect(() => {
-		var sub = document.getElementsByClassName('submarine');
-		// for submarine movement based on key pressed
-		const movement = function (event) {
-			setDepth(sub[0].offsetTop - 750);
-			console.log(sub[0].offsetTop - 750);
-			if (event.key === 'ArrowLeft') {
-				setXCord(xCord - 7.5);
-				if (deg < 180) {
-					setDeg(deg + 12);
-				}
-			}
-			if (event.key === 'ArrowRight') {
-				setXCord(xCord + 7.5);
-				if (deg > 0) {
-					setDeg(deg - 12);
-				}
-			}
-		};
-
-		// calls movement whenever key is pressed
-		document.addEventListener('keydown', movement, true);
+		document.addEventListener('keydown', subMovement, true);
 		return () => {
-			document.removeEventListener('keydown', movement, true);
+			document.removeEventListener('keydown', subMovement, true);
 		};
 	}, [xCord, deg]);
 
@@ -38,6 +17,7 @@ function Foreground() {
 		<div className="foreground">
 			{/* submarine container moves horizontally and rotates */}
 			<div
+				// what actual rotates and moves
 				className="submarine-container"
 				style={{
 					transform: 'translateX(' + xCord + 'px) rotate3d(0, 1, 0,' + deg + 'deg)',
@@ -47,12 +27,17 @@ function Foreground() {
 					{/* actual submarine image */}
 					<img className="submarine" src={submarine} alt="submarine" />
 					<div
+						// text below the submarine
 						className="text-container"
 						style={{
 							transform: 'rotate3d(0, 1, 0,' + -deg + 'deg)',
 						}}
 					>
 						<h2>{depth}m</h2>
+						<p>
+							Occaecat laborum excepteur ullamco adipisicing dolore tempor nisi commodo
+							esse adipisicing consequat.
+						</p>
 					</div>
 				</div>
 			</div>
