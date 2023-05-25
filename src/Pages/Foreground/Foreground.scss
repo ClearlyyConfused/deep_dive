@@ -14,18 +14,28 @@
 			width: auto;
 			top: 100px;
 			position: sticky;
-			opacity: 0.5; // 0.5 to 0.1 at lower depths
 			animation: sway 3.5s ease-in-out forwards infinite;
 			background-color: none; // none to white at lower depths
 			padding: 10px;
+		}
+
+		.submarine-lights {
+			width: 200px;
 			border-radius: 100px;
-			box-shadow: 0px 0px 0px 0px white; // 0px to 0px 0px 50px 60px at lower depths
+			height: 200px;
+			background-color: white;
+			box-shadow: 0px 0px 100px 120px white; // 0px to 0px 0px 50px 60px at lower depths
+			top: 125px;
+			transform: scale(1.5, 1) translateX(60px);
+			position: sticky;
+			margin: auto;
+			z-index: -1;
 		}
 
 		.text-container {
 			position: sticky;
 			top: 280px;
-			margin-top: -60px;
+			margin-top: -225px;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -34,17 +44,17 @@
 			h2 {
 				margin: 0;
 				color: white;
-				opacity: 0.5;
 				font-size: 50px;
-				animation: sway 3.5s ease-in-out forwards infinite;
 				text-align: center;
+				animation: sway 3.5s ease-in-out forwards infinite;
 			}
 			p {
 				margin: 0;
 				color: white;
-				opacity: 0.5;
+
 				max-width: 200px;
 				text-align: center;
+				animation: sway 3.5s ease-in-out forwards infinite;
 			}
 		}
 	}

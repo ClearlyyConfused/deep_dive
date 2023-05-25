@@ -3,6 +3,7 @@
 	width: 100%;
 	z-index: -1;
 	height: 12500px; // determines overall height
+	background-color: black;
 
 	.title-container {
 		position: absolute;
@@ -16,6 +17,7 @@
 			margin: 0;
 			font-size: 200px;
 			text-align: center;
+			color: white;
 
 			@media (max-width: 550px) {
 				font-size: 35vw; // have title shrink at small viewports
@@ -46,7 +48,8 @@
 			180deg,
 			rgb(0, 153, 255) 0%,
 			rgba(9, 9, 121, 1) 30%,
-			rgba(2, 0, 36, 1) 90%,
+			rgba(2, 0, 36, 1) 55%,
+			rgba(0, 0, 0, 1) 80%,
 			rgba(0, 0, 0, 1) 100%
 		);
 	}

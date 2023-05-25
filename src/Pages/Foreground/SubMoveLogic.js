@@ -10,7 +10,7 @@ function SubMoveLogic() {
 	useEffect(() => {
 		// update depth every couple of seconds
 		const timer = setInterval(() => {
-			setDepth(sub[0].offsetTop - 700);
+			setDepth(Math.ceil((sub[0].offsetTop - 700) / 1.4));
 		}, 250);
 
 		return () => {

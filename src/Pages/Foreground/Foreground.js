@@ -8,10 +8,11 @@ function Foreground() {
 
 	useEffect(() => {
 		document.addEventListener('keydown', subMovement, true);
+
 		return () => {
 			document.removeEventListener('keydown', subMovement, true);
 		};
-	}, [xCord, deg]);
+	}, [xCord, deg, depth]);
 
 	return (
 		<div className="foreground">
@@ -25,12 +26,22 @@ function Foreground() {
 			>
 				<div>
 					{/* actual submarine image */}
-					<img className="submarine" src={submarine} alt="submarine" />
+					<img
+						className="submarine"
+						src={submarine}
+						alt="submarine"
+						style={{ opacity: `${Math.max(0.7 - depth / 7500, 0.2)}` }} // visibility goes down at lower depths
+					/>
+					<div
+						style={{ opacity: `${Math.min(0 + depth / 30000, 0.15)}` }} // visibility goes up at lower depths
+						className="submarine-lights"
+					></div>
 					<div
 						// text below the submarine
 						className="text-container"
 						style={{
 							transform: 'rotate3d(0, 1, 0,' + -deg + 'deg)',
+							opacity: `${Math.max(0.7 - depth / 7500, 0.25)}`, // visibility goes down at lower depths
 						}}
 					>
 						<h2>{depth}m</h2>
