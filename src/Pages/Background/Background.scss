@@ -2,7 +2,7 @@
 	position: absolute;
 	width: 100%;
 	z-index: -1;
-	height: 10000px; // determines overall height
+	height: 12500px; // determines overall height
 
 	.title-container {
 		position: absolute;
@@ -40,7 +40,7 @@
 
 	.water {
 		padding-top: 300px; // distance from top
-		height: 9200px;
+		height: 11700px; // have a little less than overall height
 		background: rgb(0, 153, 255);
 		background: linear-gradient(
 			180deg,
