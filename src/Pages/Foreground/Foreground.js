@@ -45,10 +45,6 @@ function Foreground() {
 						}}
 					>
 						<h2>{depth}m</h2>
-						<p>
-							Occaecat laborum excepteur ullamco adipisicing dolore tempor nisi commodo
-							esse adipisicing consequat.
-						</p>
 					</div>
 				</div>
 			</div>

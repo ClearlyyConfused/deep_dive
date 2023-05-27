@@ -1,3 +1,5 @@
+// Foreground.js
+
 .foreground {
 	height: 12500px;
 	overflow-x: clip;
@@ -48,26 +50,158 @@
 				text-align: center;
 				animation: sway 3.5s ease-in-out forwards infinite;
 			}
-			p {
-				margin: 0;
-				color: white;
+		}
+	}
+}
 
-				max-width: 200px;
-				text-align: center;
-				animation: sway 3.5s ease-in-out forwards infinite;
-			}
+// ForegroundFish.js
+
+.foreground-fish {
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+
+	.fish-container {
+		animation: text-anim-1 15s ease-in-out forwards infinite;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		img:hover {
+			cursor: pointer;
+		}
+
+		.message-display,
+		.message-display-unactive {
+			margin: 0;
+			color: white;
+
+			max-width: 200px;
+			text-align: center;
+		}
+
+		.message-display {
+			animation: fade-in 1s forwards;
+		}
+		.message-display-unactive {
+			animation: fade-out 1s forwards;
 		}
 	}
 
-	@keyframes sway {
-		0% {
-			transform: rotate(2deg);
-		}
-		50% {
-			transform: rotate(-2deg);
-		}
-		100% {
-			transform: rotate(2deg);
-		}
+	.clownfish {
+		animation: fish-anim-1 15s ease-in-out forwards infinite;
+		width: 100px;
+		height: auto;
+		opacity: 0.3;
+		height: auto;
+	}
+}
+
+// general animations
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.7;
+	}
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 0.7;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes sway {
+	0% {
+		transform: rotate(2deg);
+	}
+	50% {
+		transform: rotate(-2deg);
+	}
+	100% {
+		transform: rotate(2deg);
+	}
+}
+
+// fish-container animations
+@keyframes fish-anim-1 {
+	0% {
+		transform: rotate(0);
+	}
+	30% {
+		transform: rotate(0);
+	}
+	50% {
+		transform: rotate3d(0, 1, 0, 180deg);
+	}
+	80% {
+		transform: rotate3d(0, 1, 0, 180deg);
+	}
+	100% {
+		transform: rotate3d(0, 1, 0, 360deg);
+	}
+}
+
+@keyframes text-anim-1 {
+	0% {
+		transform: translateX(-200px);
+	}
+	30% {
+		transform: translateX(200px);
+	}
+	50% {
+		transform: translateX(200px);
+	}
+	80% {
+		transform: translateX(-200px);
+	}
+	100% {
+		transform: translateX(-200px);
+	}
+}
+
+@keyframes fish-anim-2 {
+	0% {
+		transform: rotate(0);
+	}
+	30% {
+		transform: rotate(0);
+	}
+	50% {
+		transform: rotate3d(0, 1, 0, 180deg);
+	}
+	80% {
+		transform: rotate3d(0, 1, 0, 180deg);
+	}
+	100% {
+		transform: rotate3d(0, 1, 0, 360deg);
+	}
+}
+
+@keyframes text-anim-2 {
+	0% {
+		transform: translateX(-50px);
+	}
+	30% {
+		transform: translateX(50px);
+	}
+	50% {
+		transform: translateX(50px);
+	}
+	80% {
+		transform: translateX(-50px);
+	}
+	100% {
+		transform: translateX(-50px);
 	}
 }
