@@ -7,48 +7,48 @@
 	.submarine-container {
 		display: flex;
 		justify-content: center;
-		height: 100%;
 		width: 100%;
+		height: 100%;
 
 		.submarine {
-			margin-top: 800px;
-			height: 200px;
-			width: auto;
-			top: 100px;
 			position: sticky;
+			top: 100px;
 			animation: sway 3.5s ease-in-out forwards infinite;
+			margin-top: 800px;
 			background-color: none; // none to white at lower depths
 			padding: 10px;
+			width: auto;
+			height: 200px;
 		}
 
 		.submarine-lights {
-			width: 200px;
-			border-radius: 100px;
-			height: 200px;
-			background-color: white;
-			box-shadow: 0px 0px 100px 120px white; // 0px to 0px 0px 50px 60px at lower depths
+			position: sticky;
 			top: 125px;
 			transform: scale(1.5, 1) translateX(60px);
-			position: sticky;
-			margin: auto;
 			z-index: -1;
+			margin: auto;
+			box-shadow: 0px 0px 100px 120px white; // 0px to 0px 0px 50px 60px at lower depths
+			border-radius: 100px;
+			background-color: white;
+			width: 200px;
+			height: 200px;
 		}
 
 		.text-container {
+			display: flex;
 			position: sticky;
 			top: 280px;
-			margin-top: -225px;
-			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			margin-top: -225px;
 
 			h2 {
+				animation: sway 3.5s ease-in-out forwards infinite;
 				margin: 0;
 				color: white;
 				font-size: 50px;
 				text-align: center;
-				animation: sway 3.5s ease-in-out forwards infinite;
 			}
 		}
 	}
@@ -57,47 +57,46 @@
 // ForegroundFish.js
 
 .foreground-fish {
-	z-index: 1;
-	position: absolute;
-	width: 100%;
-	overflow: hidden;
 	display: flex;
 	justify-content: center;
+	width: 100%;
+	overflow: hidden;
 
 	.fish-container {
-		animation: text-anim-1 15s ease-in-out forwards infinite;
 		display: flex;
+		position: absolute;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		height: 100%;
+		height: fit-content;
 
-		img:hover {
+		.fish {
+			opacity: 0.6;
+			z-index: 5;
+			width: 100px;
+			height: auto;
+			height: auto;
+		}
+		.fish:hover {
 			cursor: pointer;
 		}
 
 		.message-display,
 		.message-display-unactive {
 			margin: 0;
-			color: white;
 
 			max-width: 200px;
+			color: white;
 			text-align: center;
 		}
 
 		.message-display {
-			animation: fade-in 1s forwards;
+			animation: fade-in 0.5s forwards;
 		}
 		.message-display-unactive {
-			animation: fade-out 1s forwards;
+			animation: fade-out 0.5s forwards;
 		}
-	}
-
-	.clownfish {
-		animation: fish-anim-1 15s ease-in-out forwards infinite;
-		width: 100px;
-		height: auto;
-		opacity: 0.3;
-		height: auto;
 	}
 }
 
@@ -152,7 +151,7 @@
 	}
 }
 
-@keyframes text-anim-1 {
+@keyframes container-anim-1 {
 	0% {
 		transform: translateX(-200px);
 	}
@@ -169,6 +168,8 @@
 		transform: translateX(-200px);
 	}
 }
+
+// ---
 
 @keyframes fish-anim-2 {
 	0% {
@@ -188,7 +189,7 @@
 	}
 }
 
-@keyframes text-anim-2 {
+@keyframes container-anim-2 {
 	0% {
 		transform: translateX(-50px);
 	}
