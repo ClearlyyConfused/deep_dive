@@ -42,6 +42,8 @@
 			justify-content: center;
 			align-items: center;
 			margin-top: -225px;
+			max-width: 100%;
+			overflow: hidden;
 
 			h2 {
 				animation: sway 3.5s ease-in-out forwards infinite;
@@ -110,14 +112,59 @@
 		width: 250px !important;
 	}
 	.octopus {
+		opacity: 0.4 !important;
 		width: 325px !important;
 	}
 	.gulper-eel {
 		width: 220px !important;
 	}
 	.giant-squid {
-		opacity: 0.2 !important;
+		opacity: 0.1 !important;
 		width: 800px !important;
+		+ .message-display {
+			animation: fade-in2 0.5s forwards !important;
+		}
+		+ .message-display-unactive {
+			animation: fade-out2 0.5s forwards !important;
+		}
+		+ p {
+			max-width: 400px !important;
+		}
+	}
+	.angler-fish {
+		opacity: 0.3 !important;
+		box-shadow: 0px 0px 15px 15px rgba(255, 255, 255, 0.25);
+		border-radius: 50px;
+		background-color: rgba(255, 255, 255, 0.25);
+		+ .message-display {
+			animation: fade-in2 0.5s forwards !important;
+		}
+		+ .message-display-unactive {
+			animation: fade-out2 0.5s forwards !important;
+		}
+	}
+	.oarfish {
+		opacity: 0.05 !important;
+		width: 1000px !important;
+		height: 150px !important;
+		+ .message-display {
+			animation: fade-in2 0.5s forwards !important;
+		}
+		+ .message-display-unactive {
+			animation: fade-out2 0.5s forwards !important;
+		}
+		+ p {
+			max-width: 500px !important;
+		}
+	}
+	.blobfish {
+		opacity: 0.05 !important;
+		+ .message-display {
+			animation: fade-in2 0.5s forwards !important;
+		}
+		+ .message-display-unactive {
+			animation: fade-out2 0.5s forwards !important;
+		}
 	}
 }
 
@@ -132,9 +179,27 @@
 	}
 }
 
+@keyframes fade-in2 {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.3;
+	}
+}
+
 @keyframes fade-out {
 	0% {
 		opacity: 0.7;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fade-out2 {
+	0% {
+		opacity: 0.3;
 	}
 	100% {
 		opacity: 0;

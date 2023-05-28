@@ -8,11 +8,14 @@ import tuna from './images/tuna.webp';
 import giantPacificOct from './images/giant-pacfic-octopus.webp';
 import gulperEel from './images/gulper_eel.webp';
 import giantSquid from './images/giant-squid.png';
+import blobFish from './images/blobfish.png';
+import oarfish from './images/oarfish.webp';
+import anglerfish from './images/anglerfish.webp';
 
 import Fish from './Fish/Fish';
 
 function ForegroundFish() {
-	const numberOfFish = 10;
+	const numberOfFish = 13;
 
 	function range(max, min) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
@@ -122,11 +125,41 @@ function ForegroundFish() {
 				image={giantSquid}
 				className={'giant-squid'}
 				message={`The giant squid has a unique bioluminescent organ called the "luminar gland," which emits a pulsating light pattern that mesmerizes and disorients its prey, giving the squid a distinct advantage in capturing its food in the depths of the ocean.`}
-				depth={range(7000, 6600)}
+				depth={range(7500, 7000)}
 				offset={0}
 				animation={range(1, 1)}
 				animSpeed={range(30, 20)}
 				zIndex={numberOfFish - 9}
+			/>
+			<Fish
+				image={anglerfish}
+				className={'angler-fish'}
+				message={`The anglerfish possesses an intricate network of microscopic sensors on its esca, the glowing lure at the tip of its illicium, which allow it to detect and interpret subtle changes in water currents, aiding in both prey detection and navigation within its deep-sea habitat.`}
+				depth={range(8500, 8000)}
+				offset={0}
+				animation={range(1, 1)}
+				animSpeed={range(30, 20)}
+				zIndex={numberOfFish - 10}
+			/>
+			<Fish
+				image={oarfish}
+				className={'oarfish'}
+				message={`The oarfish is equipped with a complex series of photophores along its elongated body, enabling it to emit a mesmerizing, bioluminescent display that serves as a means of communication and attracting potential mates in the dark depths of the ocean.`}
+				depth={range(9500, 9000)}
+				offset={0}
+				animation={range(1, 1)}
+				animSpeed={range(30, 20)}
+				zIndex={numberOfFish - 11}
+			/>
+			<Fish
+				image={blobFish}
+				className={'blobfish'}
+				message={`The blobfish possesses a remarkable ability to regulate its body density through a specialized gel-like substance within its flesh, allowing it to effortlessly float at different depths in the ocean without expending energy on buoyancy control.`}
+				depth={range(10500, 10000)}
+				offset={0}
+				animation={range(1, 1)}
+				animSpeed={range(30, 20)}
+				zIndex={numberOfFish - 12}
 			/>
 		</div>
 	);
