@@ -1,23 +1,23 @@
 .background {
 	position: absolute;
-	width: 100%;
 	z-index: -1;
-	height: 12500px; // determines overall height
 	background-color: black;
+	width: 100%;
+	height: 12500px; // determines overall height
 
 	.title-container {
 		position: absolute;
-		height: 700px; // how far down title will stick
 		width: 100%;
+		height: 700px; // how far down title will stick
 		.title {
-			top: 10px;
 			position: sticky;
+			top: 10px;
 		}
 		h1 {
 			margin: 0;
+			color: white;
 			font-size: 200px;
 			text-align: center;
-			color: white;
 
 			@media (max-width: 550px) {
 				font-size: 35vw; // have title shrink at small viewports
@@ -29,20 +29,18 @@
 	}
 
 	.waves {
-		padding-top: 300px; // distance from top
-		margin-bottom: -15px; // to overlap with .water
-		overflow: hidden;
 		display: flex;
 		justify-content: center;
+		margin-bottom: -15px; // to overlap with .water
+		padding-top: 300px; // distance from top
+		overflow: hidden;
 		img {
-			min-width: 1600px;
 			animation: waves 3.5s ease-in-out forwards infinite;
+			min-width: 1600px;
 		}
 	}
 
 	.water {
-		padding-top: 300px; // distance from top
-		height: 11700px; // have a little less than overall height
 		background: rgb(0, 153, 255);
 		background: linear-gradient(
 			180deg,
@@ -52,12 +50,14 @@
 			rgba(0, 0, 0, 1) 80%,
 			rgba(0, 0, 0, 1) 100%
 		);
+		padding-top: 300px; // distance from top
+		height: 11700px; // have a little less than overall height
 	}
 
 	@keyframes waves {
 		0% {
-			min-width: 1500px;
 			transform: rotate(1deg);
+			min-width: 1500px;
 		}
 		50% {
 			transform: rotate(-1deg);

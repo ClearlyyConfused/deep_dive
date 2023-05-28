@@ -98,6 +98,27 @@
 			animation: fade-out 0.5s forwards;
 		}
 	}
+
+	.great-white {
+		width: 325px !important;
+		+ p {
+			margin-top: -60px !important;
+			margin-left: -10px !important;
+		}
+	}
+	.swordfish {
+		width: 250px !important;
+	}
+	.octopus {
+		width: 325px !important;
+	}
+	.gulper-eel {
+		width: 220px !important;
+	}
+	.giant-squid {
+		opacity: 0.2 !important;
+		width: 800px !important;
+	}
 }
 
 // general animations
