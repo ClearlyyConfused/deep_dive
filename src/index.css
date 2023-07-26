@@ -1,3 +1,4 @@
+/* prevents horizontal scrolling on mobile */
 html,
 body {
 	overflow-x: hidden;
